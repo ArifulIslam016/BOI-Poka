@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { setItemToLs } from '../../Utilitys/Utility';
 
 const BookDetails = () => {
     const booksData=useLoaderData()
@@ -20,7 +21,10 @@ const BookDetails = () => {
    yearOfPublishing,
    bookId,
  } = DetailedbookData;
- console.log( DetailedbookData)
+ 
+ const handleRead=(id)=>{
+    setItemToLs(id)
+ }
   return (
     <div>
       <div className="flex items-center flex-col md:flex-row ">
@@ -62,8 +66,10 @@ const BookDetails = () => {
               <h4 className="text-lg font-bold">{rating}</h4>
             </div>
             <div className="flex space-x-3">
-              <button class="btn ">Read</button>
-              <button class="btn bg-[#59C6D2]">Add Wished</button>
+              <button className="btn " onClick={() => handleRead(bookId)}>
+                Mark as Read
+              </button>
+              <button className="btn bg-[#59C6D2]">Add Wished</button>
             </div>
           </div>
         </div>
