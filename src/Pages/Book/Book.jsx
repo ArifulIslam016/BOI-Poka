@@ -1,10 +1,54 @@
 import React from 'react';
+import { CiStar } from 'react-icons/ci';
+import { Link } from 'react-router';
 
 const Book = ({ singlebookdata }) => {
-
+ const {
+   totalPages,
+   review,
+   rating,
+   publisher,
+   category,
+   author,
+   bookName,
+   image,
+   tags,
+   yearOfPublishing,
+   bookId,
+ } = singlebookdata;
   return (
     <div>
-      <p>hi</p>
+      <Link to={`/bookDetails/${bookId}`}>
+        <div className="card bg-base-100 w-96 shadow-sm border">
+          <figure>
+            <img
+              className="h-[166px] px-[104px] py-[32px] bg-gray-200 rounded-2xl m-6"
+              src={image}
+              alt="Shoes"
+            />
+          </figure>
+          <div className="card-body space-y-2">
+            <div className="flex">
+              {tags.map((tag,i) => (
+                <button key={i} className=" bg-[#23BE0A10] mr-1 text-green-500 rounded-full px-4 py-[7px]">
+                  {tag}
+                </button>
+              ))}
+            </div>
+            <h2 className="card-title">
+              {bookName}
+              <div className="badge badge-secondary">{yearOfPublishing}</div>
+            </h2>
+            <p>BY {publisher}</p>
+            <div className="card-actions justify-between">
+              <div className="badge ">{category}</div>
+              <div className="badge ">
+                {rating} <CiStar></CiStar>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Link>
     </div>
   );
 };

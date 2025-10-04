@@ -2,11 +2,15 @@ import React from 'react';
 import { NavLink } from 'react-router';
 
 const Navbar = () => {
-    const links=<>
-    <NavLink className="m-2">Home </NavLink>
-    <NavLink className="m-2">Listed Books </NavLink>
-    <NavLink className="m-2">Page to Read </NavLink>
-    </>
+    const links = (
+      <>
+        <NavLink to={'/'} className="m-2">Home </NavLink>
+        <NavLink to={"/listedbook"} className="m-2">
+          Listed Books{" "}
+        </NavLink>
+        <NavLink className="m-2">Page to Read </NavLink>
+      </>
+    );
     return (
       <div className="navbar  py-[50px]">
         <div className="navbar-start">
