@@ -18,4 +18,4 @@ const setItemToLs=(id)=>{
         localStorage.setItem("ReadedBOOk", toBeSet);
     }
 }
-export {setItemToLs};
+export { setItemToLs, getFromLs };
