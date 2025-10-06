@@ -18,6 +18,7 @@ const Book = ({ singlebookdata }) => {
  } = singlebookdata;
   return (
     <div>
+      
       <Link to={`/bookDetails/${bookId}`}>
         <div className="card bg-base-100 w-96 shadow-sm border">
           <figure>
@@ -29,8 +30,11 @@ const Book = ({ singlebookdata }) => {
           </figure>
           <div className="card-body space-y-2">
             <div className="flex">
-              {tags.map((tag,i) => (
-                <button key={i} className=" bg-[#23BE0A10] mr-1 text-green-500 rounded-full px-4 py-[7px]">
+              {tags.map((tag, i) => (
+                <button
+                  key={i}
+                  className=" bg-[#23BE0A10] mr-1 text-green-500 rounded-full px-4 py-[7px]"
+                >
                   {tag}
                 </button>
               ))}
