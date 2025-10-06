@@ -24,6 +24,7 @@ const BookDetails = () => {
  
  const handleRead=(id)=>{
     setItemToLs(id)
+
  }
   return (
     <div>

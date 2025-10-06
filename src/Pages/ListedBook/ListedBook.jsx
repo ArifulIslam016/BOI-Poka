@@ -31,7 +31,7 @@ const ListedBook = () => {
  }
   }
    
-    console.log(actualisted)
+
       return (
         <Tabs>
           <div className="max-w-[300px] mx-auto ">
